@@ -52,9 +52,13 @@ h5,
 }
 
 .eyebrow {
-  @apply text-2xl leading-8;
+  @apply text-2xl leading-8 text-primary;
 }
 
 .logo {
   @apply font-garamond text-4xl leading-10;
+}
+
+.container {
+  @apply max-w-[1224px] px-5 mx-auto;
 }
