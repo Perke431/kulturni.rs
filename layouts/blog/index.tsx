@@ -1,7 +1,31 @@
-import { Section } from '@/components';
 import Link from 'next/link';
+import { FeaturedBlog, Section } from '@/components';
 
 const Blog = () => {
+  const blogs = [
+    {
+      id: 0,
+      image: '/images/blog-1.jpg',
+      headline: 'Vikend vodič: gde ovog puta ide Novi Sad?',
+      date: '11.03.2025',
+      link: '/',
+    },
+    {
+      id: 1,
+      image: '/images/blog-2.jpg',
+      headline: 'Pet prostora koji su promenili kulturnu mapu Novog Sada',
+      date: '11.03.2025',
+      link: '/',
+    },
+    {
+      id: 2,
+      image: '/images/blog-3.jpg',
+      headline: 'Šta Novi Sad radi posle osam?',
+      date: '11.03.2025',
+      link: '/',
+    },
+  ];
+
   return (
     <Section className="py-24">
       <div className="container">
@@ -26,6 +50,14 @@ const Blog = () => {
               Vidi šta vredi
             </Link>
           </div>
+        </div>
+        <div className="grid grid-cols-3 gap-4 mt-20">
+          {blogs.map((x) => (
+            <FeaturedBlog
+              key={x.id}
+              blog={x}
+            />
+          ))}
         </div>
       </div>
     </Section>

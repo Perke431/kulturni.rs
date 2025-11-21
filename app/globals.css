@@ -10,6 +10,7 @@
   --color-background: var(--background);
   --color-text: var(--text);
   --color-primary: var(--primary);
+  --color-white-20: hsl(0, 0, 100, 0.2);
   --font-bebas: var(--font-bebas);
   --font-garamond: var(--font-garamond);
 }
