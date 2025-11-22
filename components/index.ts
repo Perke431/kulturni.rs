@@ -5,3 +5,6 @@ export { default as Section } from './section';
 export { default as HeroImage } from './hero-image';
 export { default as FeaturedEvent } from './featured-event';
 export { default as FeaturedBlog } from './featured-blog';
+export { default as Slide } from './slider';
+export { default as Event } from './event';
+export { default as DetailHero } from './detail-hero';

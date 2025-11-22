@@ -63,3 +63,15 @@ h5,
 .container {
   @apply max-w-[1224px] px-5 mx-auto;
 }
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  gap: 16px;
+}
+.embla__slide {
+  flex: 0 0 284px;
+  min-width: 0;
+}

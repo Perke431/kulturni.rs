@@ -35,17 +35,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p>© {new Date().getFullYear()} Kulturni.rs - Sva prava zadrzana.</p>
-        <p>
-          Designed and developed by{' '}
-          <Link
-            className="text-primary"
-            href="https://devdad.me"
-          >
-            devdad
-          </Link>
-          .
-        </p>
+        <p>© {new Date().getFullYear()} Kulturni.rs - Sva prava zadržana.</p>
       </div>
     </footer>
   );

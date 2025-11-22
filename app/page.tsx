@@ -1,4 +1,4 @@
-import { Blog, CTA, Events, FeaturedEvents, Hero, Newsletter } from '@/layouts';
+import { Blog, Events, FeaturedEvents, Hero, Newsletter } from '@/layouts';
 
 const Home = () => {
   return (
@@ -8,7 +8,6 @@ const Home = () => {
       <Events />
       <Newsletter />
       <Blog />
-      <CTA />
     </>
   );
 };

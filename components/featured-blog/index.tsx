@@ -2,16 +2,17 @@ import { Arrow } from '@/svg';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type featuredEventProps = {
+type featuredBlogType = {
   id: number;
   date: string;
+  tag?: string;
   headline: string;
   link: string;
   image: string;
 };
 
-const FeaturedEvent = ({ blog }: { blog: featuredEventProps }) => {
-  const { id, date, headline, link, image } = blog;
+const FeaturedEvent = ({ blog }: { blog: featuredBlogType }) => {
+  const { id, date, tag, headline, link, image } = blog;
 
   return (
     <Link
@@ -25,7 +26,10 @@ const FeaturedEvent = ({ blog }: { blog: featuredEventProps }) => {
         alt="Kulturni.rs istaknuti dogadjaj"
         className="-z-10"
       />
-      <div className="flex flex-col justify-end gap-3">
+      <div className="flex flex-col justify-end gap-3 text-left">
+        <p className="bg-primary px-3 py-1 text-background rounded-sm absolute top-6 left-6">
+          {tag}
+        </p>
         <h3 className="mt-auto">{headline}</h3>
         <div className="flex items-center justify-between">
           <p className="text-white">{date}</p>
