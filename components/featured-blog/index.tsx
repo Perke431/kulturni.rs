@@ -24,7 +24,7 @@ const FeaturedEvent = ({ blog }: { blog: featuredBlogType }) => {
         src={image}
         fill
         alt="Kulturni.rs istaknuti dogadjaj"
-        className="-z-10"
+        className="-z-10 object-cover"
       />
       <div className="flex flex-col justify-end gap-3 text-left">
         <p className="bg-primary px-3 py-1 text-background rounded-sm absolute top-6 left-6">

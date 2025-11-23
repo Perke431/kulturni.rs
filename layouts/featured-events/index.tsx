@@ -38,9 +38,9 @@ const FeaturedEvents = () => {
   ];
 
   return (
-    <Section className="py-24">
+    <Section className="py-20 lg:py-24">
       <div className="container">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col max-lg:text-center max-lg:justify-center lg:flex-row items-center justify-between">
           <div>
             <p className="eyebrow">Zastani, pogledaj, doživi.</p>
             <h2>
@@ -50,13 +50,13 @@ const FeaturedEvents = () => {
             </h2>
           </div>
           <div className="flex flex-col gap-6">
-            <p className="max-w-[276px]">
+            <p className="max-w-[360px] lg:max-w-[276px]">
               Ovde su događaji koji pune energijom, pokreću ekipu i prave
               trenutke za pamćenje. Ako tražiš gde se stvarno nešto dešava,
               stigao si na pravo mesto.
             </p>
             <Link
-              className="w-fit py-4 px-9 bg-primary text-background rounded-sm"
+              className="max-lg:mx-auto w-fit py-4 px-9 bg-primary text-background rounded-sm"
               href="#"
             >
               Budi prvi koji zna gde i kad!

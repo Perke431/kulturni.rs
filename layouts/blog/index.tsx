@@ -27,7 +27,7 @@ const Blog = () => {
   ];
 
   return (
-    <Section className="py-24">
+    <Section className="py-20 lg:py-24">
       <div className="container">
         <div className="flex items-center justify-between">
           <div>

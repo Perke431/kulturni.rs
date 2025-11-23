@@ -100,7 +100,7 @@ const Dogadjaji = () => {
   ];
 
   return (
-    <Section className="py-[100px]">
+    <Section className="py-20 lg:py-24">
       <div className="container text-center">
         <p className="eyebrow text-primary">KULTURNI RITAM GRADA</p>
         <h2>
@@ -112,7 +112,7 @@ const Dogadjaji = () => {
           ritmu onoga što se upravo dešava.
         </p>
         <div></div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {events.map((x) => (
             <Event
               key={x.id}

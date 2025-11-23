@@ -58,7 +58,7 @@ const Events = () => {
   ];
 
   return (
-    <Section className="py-24">
+    <Section className="py-20 lg:py-24">
       <div className="container text-center">
         <h2>
           Kultura se živi,

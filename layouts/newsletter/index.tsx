@@ -19,7 +19,7 @@ const Newsletter = () => {
     setSeeConcerts(!seeConcerts);
   };
   return (
-    <Section className="py-24">
+    <Section className="py-20 lg:py-24">
       <div className="container text-center">
         <p className="eyebrow">
           donosimo ti najzanimljivije događaje direktno u inbox.
@@ -53,7 +53,7 @@ const Newsletter = () => {
               className="outline-0 p-4 rounded-tl-sm rounded-bl-sm border border-primary max-h-14 min-w-[290px]"
             />
             <button
-              className="py-4 px-9 bg-primary text-background rounded-tr-sm rounded-br-sm cursor-pointer hover:text-text"
+              className="py-4 px-9 bg-primary text-background rounded-tr-sm rounded-br-sm cursor-pointer"
               type="submit"
             >
               Želim da budem u toku

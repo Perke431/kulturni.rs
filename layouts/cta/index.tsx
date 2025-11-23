@@ -20,9 +20,9 @@ const CTA = () => {
   };
 
   return (
-    <Section className="bg-primary text-background py-24">
+    <Section className="bg-primary text-background py-20 lg:py-24">
       <div className="container text-center">
-        <h2 className="max-w-[860px] mx-auto">
+        <h2 className="max-sm:text-5xl! max-w-[860px] mx-auto">
           Dok svi pričaju o novoj predstavi, stand up-u ili koncertu - ti možeš
           već da znaš gde se to dešava.
         </h2>
@@ -45,14 +45,14 @@ const CTA = () => {
               setValue={handleSeeConcerts}
             />
           </div>
-          <div className="mt-6">
+          <div className="max-sm:flex max-sm:flex-col mt-6">
             <input
               type="text"
               placeholder="tvoj@email.com"
-              className="outline-0 p-4 rounded-tl-sm rounded-bl-sm border border-background max-h-14 min-w-[290px]"
+              className="outline-0 p-4 rounded-tl-sm max-sm:rounded-tr-sm sm:rounded-bl-sm border border-background max-h-14 min-w-[290px] max-sm:text-center"
             />
             <button
-              className="py-4 px-9 bg-background text-primary rounded-tr-sm rounded-br-sm cursor-pointer hover:text-text"
+              className="py-4 px-9 bg-background text-primary sm:rounded-tr-sm rounded-br-sm max-sm:rounded-bl-sm cursor-pointer hover:text-text"
               type="submit"
             >
               Želim da budem u toku

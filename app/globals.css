@@ -25,12 +25,12 @@ body {
 
 h1,
 .h1 {
-  @apply text-9xl leading-28;
+  @apply text-7xl md:text-8xl md:leading-[100px] lg:text-9xl lg:leading-28;
 }
 
 h2,
 .h2 {
-  @apply text-7xl leading-[72px];
+  @apply text-6xl leading-[60px] lg:text-7xl lg:leading-[72px];
 }
 
 h3,

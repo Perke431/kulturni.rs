@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 const Kontakt = () => {
   return (
-    <Section className="pt-[100px] pb-[200px]">
-      <div className="container flex items-center justify-between">
-        <div>
+    <Section className="pt-20 max-md:pb-20 lg:pt-24 pb-48">
+      <div className="container flex flex-col lg:flex-row items-center justify-between">
+        <div className="max-lg:text-center">
           <h1 className="h2">
             Iza scene ali
             <br /> uvek <span className="text-primary">na vezi</span>.
@@ -16,14 +16,14 @@ const Kontakt = () => {
             Imaš predlog, saradnju ili pitanje? Piši nam, podeli ideju
             <br /> ili pošalji vest o događaju koji vredi pažnje.
           </p>
-          <div className="my-10 w-fit">
+          <div className="my-10 lg:w-fit">
             <Link
               href="mailto:office@kulturni.rs"
               className="hover:text-primary"
             >
               office@kulturni.rs
             </Link>
-            <div className="flex items-center gap-3 mt-5">
+            <div className="flex items-center gap-3 mt-5 max-lg:justify-center">
               <Link
                 href="https://www.instagram.com/kulturni.novisad/"
                 className="group"
@@ -54,7 +54,7 @@ const Kontakt = () => {
             alt="Kulturni.rs kontakt slika"
             width={320}
             height={284}
-            className="border border-white-20 rounded-xl absolute -bottom-12 -right-6"
+            className="max-md:hidden border border-white-20 rounded-xl absolute -bottom-12 right-0"
           />
         </div>
       </div>

@@ -77,7 +77,7 @@ const Blog = () => {
   ];
 
   return (
-    <Section className="py-[100px]">
+    <Section className="py-20 lg:py-24">
       <div className="container text-center">
         <p className="eyebrow text-primary">IZA SCENE</p>
         <h2>
@@ -89,7 +89,7 @@ const Blog = () => {
           iznutra na ono što oblikuje našu kulturu.
         </p>
         <div></div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {blogs.map((x) => (
             <FeaturedBlog
               key={x.id}
