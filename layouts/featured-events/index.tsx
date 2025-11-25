@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Section, FeaturedEvent } from '@/components';
+import { Section, FeaturedEvent, Event } from '@/components';
+import Slider from '@/components/slider';
 
 const FeaturedEvents = () => {
   const events = [
@@ -45,7 +46,7 @@ const FeaturedEvents = () => {
             <p className="eyebrow">Zastani, pogledaj, doživi.</p>
             <h2>
               jer najbolji događaji se
-              <br />
+              <br className="max-sm:hidden" />
               ne čekaju, oni se hvataju.
             </h2>
           </div>
@@ -63,13 +64,24 @@ const FeaturedEvents = () => {
             </Link>
           </div>
         </div>
-        <div className="flex items-end gap-4 mt-20">
+        <div className="max-lg:hidden flex items-end gap-4 mt-20">
           {events.map((x) => (
             <FeaturedEvent
               key={x.id}
               event={x}
             />
           ))}
+        </div>
+        <div className="mt-20 lg:hidden">
+          <Slider
+            showButtons={false}
+            slides={events.map((x) => (
+              <Event
+                key={x.id}
+                event={x}
+              />
+            ))}
+          />
         </div>
       </div>
     </Section>

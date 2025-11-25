@@ -20,7 +20,7 @@ const Event = ({ event }: { event: eventType }) => {
     <Link
       href={link}
       className={`
-        border border-white-20 rounded-xl hover:border-primary p-4 flex flex-col justify-between relative ${
+        border border-white-20 rounded-xl hover:border-primary p-4 flex flex-col justify-between relative max-md:min-h-[480px] max-lg:min-h-[400px] ${
           isListPage ? 'min-h-[480px]' : 'min-h-[360px]'
         }`}
     >
@@ -28,7 +28,7 @@ const Event = ({ event }: { event: eventType }) => {
         src={image}
         fill
         alt="Kulturni.rs istaknuti dogadjaj"
-        className="-z-10"
+        className="-z-10 object-cover"
       />
       <div className="flex items-center justify-between">
         <p className="bg-white-20 px-3 py-1 text-white rounded-sm">{date}</p>

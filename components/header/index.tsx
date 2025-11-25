@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Hamburger } from '@/components';
 
 const Header = () => {
   return (
@@ -6,11 +7,11 @@ const Header = () => {
       <div className="container flex items-center justify-between">
         <Link
           href="/"
-          className="logo min-w-[184px]"
+          className="logo min-w-[184px] z-50"
         >
           kulturni.rs
         </Link>
-        <nav className="flex gap-4">
+        <nav className="max-md:hidden flex gap-4">
           <Link
             className="hover:text-primary"
             href="/dogadjaji"
@@ -31,11 +32,12 @@ const Header = () => {
           </Link>
         </nav>
         <Link
-          className="text-primary border border-primary py-3 px-6"
+          className="max-md:hidden text-primary border border-primary py-3 px-6"
           href="/dogadjaji"
         >
           Uđi u priču - vidi šta sledi
         </Link>
+        <Hamburger />
       </div>
     </header>
   );

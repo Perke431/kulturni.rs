@@ -69,6 +69,7 @@ const Events = () => {
           <br /> deo onoga što menja grad.
         </p>
         <Slider
+          showButtons
           slides={events.map((x) => (
             <Event
               event={x}

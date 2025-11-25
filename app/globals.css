@@ -75,3 +75,15 @@ h5,
   flex: 0 0 284px;
   min-width: 0;
 }
+
+@media (max-width: 1024px) {
+  .embla__slide {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .embla__slide {
+    flex: 0 0 100%;
+  }
+}

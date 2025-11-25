@@ -49,10 +49,10 @@ const CTA = () => {
             <input
               type="text"
               placeholder="tvoj@email.com"
-              className="outline-0 p-4 rounded-tl-sm max-sm:rounded-tr-sm sm:rounded-bl-sm border border-background max-h-14 min-w-[290px] max-sm:text-center"
+              className="outline-0 p-4 rounded-tl-sm max-sm:rounded-sm sm:rounded-bl-sm border border-background max-h-14 min-w-[290px] max-sm:text-center"
             />
             <button
-              className="py-4 px-9 bg-background text-primary sm:rounded-tr-sm rounded-br-sm max-sm:rounded-bl-sm cursor-pointer hover:text-text"
+              className="py-4 px-9 bg-background text-primary sm:rounded-tr-sm sm:rounded-br-sm max-sm:rounded-sm cursor-pointer hover:text-text mt-2"
               type="submit"
             >
               Želim da budem u toku

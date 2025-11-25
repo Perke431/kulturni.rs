@@ -29,7 +29,7 @@ const FeaturedEvent = ({ event }: { event: featuredEventProps }) => {
         src={image}
         fill
         alt="Kulturni.rs istaknuti dogadjaj"
-        className="-z-10"
+        className="-z-10 object-cover"
       />
       <div className="flex items-center justify-between">
         <p className="bg-white-20 px-3 py-1 text-white rounded-sm">{date}</p>

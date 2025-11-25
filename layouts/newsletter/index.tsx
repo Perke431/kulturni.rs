@@ -46,14 +46,14 @@ const Newsletter = () => {
               inverted
             />
           </div>
-          <div className="mt-6">
+          <div className="max-sm:flex max-sm:flex-col mt-6">
             <input
               type="text"
               placeholder="tvoj@email.com"
-              className="outline-0 p-4 rounded-tl-sm rounded-bl-sm border border-primary max-h-14 min-w-[290px]"
+              className="outline-0 p-4 max-sm:rounded-sm sm:rounded-tl-sm sm:rounded-bl-sm border border-primary max-h-14 min-w-[290px] max-sm:text-center"
             />
             <button
-              className="py-4 px-9 bg-primary text-background rounded-tr-sm rounded-br-sm cursor-pointer"
+              className="py-4 px-9 bg-primary text-background max-sm:rounded-sm sm:rounded-tr-sm sm:rounded-br-sm cursor-pointer mt-2"
               type="submit"
             >
               Želim da budem u toku
