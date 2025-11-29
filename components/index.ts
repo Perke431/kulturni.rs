@@ -9,3 +9,4 @@ export { default as Slide } from './slider';
 export { default as Event } from './event';
 export { default as DetailHero } from './detail-hero';
 export { default as Hamburger } from './hamburger';
+export { default as AdminDashboard } from './admin/dashboard';

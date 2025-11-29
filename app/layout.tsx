@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { Bebas_Neue, EB_Garamond } from 'next/font/google';
 import './globals.css';
-import { Footer, Header } from '@/components';
-import { CTA } from '@/layouts';
+import { ConditionalLayout } from '@/components/conditional-layout';
 
 const bebasNeue = Bebas_Neue({
   variable: '--font-bebas',
@@ -29,10 +28,7 @@ export default function RootLayout({
       <body
         className={`${bebasNeue.variable} ${ebGaramond.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <CTA />
-        <Footer />
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   );
