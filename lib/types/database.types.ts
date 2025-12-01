@@ -96,19 +96,25 @@ export interface Database {
       profiles: {
         Row: {
           created_at: string
+          first_name: string | null
           id: string
+          last_name: string | null
           role: 'user' | 'admin'
           updated_at: string
         }
         Insert: {
           created_at?: string
+          first_name?: string | null
           id: string
+          last_name?: string | null
           role?: 'user' | 'admin'
           updated_at?: string
         }
         Update: {
           created_at?: string
+          first_name?: string | null
           id?: string
+          last_name?: string | null
           role?: 'user' | 'admin'
           updated_at?: string
         }

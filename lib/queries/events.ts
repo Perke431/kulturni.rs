@@ -188,3 +188,4 @@ export async function deleteEvent(id: string) {
   return { success: true };
 }
 
+

@@ -5,16 +5,50 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { createSupabaseClient } from '@/lib/supabase/client';
 
+interface UserData {
+  email: string;
+  first_name: string | null;
+}
+
 export default function AdminDashboard() {
-  const [user, setUser] = useState<any>(null);
+  const [userData, setUserData] = useState<UserData | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
     const loadUser = async () => {
       const supabase = createSupabaseClient();
-      const { data: { user } } = await supabase.auth.getUser();
-      setUser(user);
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (session) {
+        // Fetch profile to get first_name
+        try {
+          const response = await fetch('/api/settings', {
+            headers: {
+              Authorization: `Bearer ${session.access_token}`,
+            },
+          });
+          
+          if (response.ok) {
+            const data = await response.json();
+            setUserData({
+              email: data.email,
+              first_name: data.first_name,
+            });
+          } else {
+            // Fallback to just email
+            setUserData({
+              email: session.user.email || '',
+              first_name: null,
+            });
+          }
+        } catch {
+          setUserData({
+            email: session.user.email || '',
+            first_name: null,
+          });
+        }
+      }
       setLoading(false);
     };
 
@@ -43,7 +77,7 @@ export default function AdminDashboard() {
           <div>
             <h1 className="h1 text-primary mb-2">Admin Dashboard</h1>
             <p className="text-text/70">
-              Welcome back, {user?.email}
+              Welcome back, {userData?.first_name || userData?.email}
             </p>
           </div>
           <button
