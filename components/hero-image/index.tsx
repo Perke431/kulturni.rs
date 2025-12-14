@@ -17,6 +17,7 @@ const HeroImage = ({ inHero }: { inHero?: boolean }) => {
         height={480}
         fetchPriority="high"
         alt="Kulturni.rs hero slika"
+        sizes="(max-width: 640px) 100vw, (max-width: 768px) 560px, (max-width: 1024px) 680px, 784px"
         className={`${
           inHero ? 'md:-mt-16' : ''
         } mx-auto rounded-lg sm:rounded-2xl md:max-w-[560px] lg:max-w-[680px] xl:max-w-[784px]`}
