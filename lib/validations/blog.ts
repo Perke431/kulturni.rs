@@ -31,6 +31,8 @@ export const createBlogSchema = z.object({
     },
     { message: 'Must be a valid URL or a relative path starting with /' }
   ),
+  image_name: z.string().optional(),
+  image_alt: z.string().optional(),
   related_blogs: z.array(z.string().uuid('Invalid UUID')).default([]),
 });
 

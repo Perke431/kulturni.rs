@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { createSupabaseClient } from '@/lib/supabase/client';
 import type { Event, BuyTicketLink } from '@/lib/types/database.types';
 import Link from 'next/link';
+import WYSIWYGEditor from '@/components/wysiwyg-editor';
 
 export default function AdminEventsPage() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -477,13 +478,10 @@ function EventForm({
 
         <div>
           <label className="block text-sm font-medium mb-2 text-text">Content (HTML)</label>
-          <textarea
-            value={formData.content ?? ''}
-            onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-            required
-            rows={10}
-            className="w-full px-4 py-2 bg-background border border-white-20 rounded-md text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-            placeholder="Enter HTML content here..."
+          <WYSIWYGEditor
+            content={formData.content ?? ''}
+            onChange={(html) => setFormData({ ...formData, content: html })}
+            placeholder="Enter content here..."
           />
         </div>
 

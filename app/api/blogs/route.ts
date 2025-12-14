@@ -96,6 +96,8 @@ export async function POST(request: NextRequest) {
       read_time: validatedData.read_time,
       content: validatedData.content,
       image_url: validatedData.image_url || null,
+      image_name: validatedData.image_name || null,
+      image_alt: validatedData.image_alt || null,
       related_blogs:
         validatedData.related_blogs.length > 0
           ? validatedData.related_blogs
@@ -196,6 +198,12 @@ export async function PUT(request: NextRequest) {
     if (updates.content !== undefined) blogUpdates.content = updates.content;
     if (updates.image_url !== undefined) {
       blogUpdates.image_url = updates.image_url || null;
+    }
+    if (updates.image_name !== undefined) {
+      blogUpdates.image_name = updates.image_name || null;
+    }
+    if (updates.image_alt !== undefined) {
+      blogUpdates.image_alt = updates.image_alt || null;
     }
     if (updates.related_blogs !== undefined) {
       blogUpdates.related_blogs =

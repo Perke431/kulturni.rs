@@ -14,6 +14,7 @@ const Hamburger = () => {
   return (
     <div className="md:hidden">
       <button
+        aria-label="Meni"
         onClick={handleIsOpen}
         className="flex flex-col gap-2 cursor-pointer z-50 relative"
       >

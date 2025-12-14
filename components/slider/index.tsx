@@ -41,12 +41,14 @@ const Slider = ({
         <div className="flex items-center justify-between mt-10">
           <div className="flex items-center gap-4">
             <button
+              aria-label="Prethodni"
               className="embla__prev cursor-pointer text-primary w-12 h-12 flex items-center justify-center border border-primary rounded-full"
               onClick={scrollPrev}
             >
               <Arrow className="w-4 h-4 rotate-z-180" />
             </button>
             <button
+              aria-label="Sledeći"
               className="embla__next cursor-pointer text-primary w-12 h-12 flex items-center justify-center border border-primary rounded-full"
               onClick={scrollNext}
             >

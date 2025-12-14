@@ -20,10 +20,10 @@ const FeaturedEvent = ({ event }: { event: featuredEventProps }) => {
     <Link
       href={link}
       className={`
-        ${position === 'left' ? 'h-[480px] w-[334px]' : ''} 
-        ${position === 'center' ? 'h-[520px] w-[484px]' : ''} 
-        ${position === 'right' ? 'h-[440px] w-[334px]' : ''} 
-        border border-white-20 rounded-xl hover:border-primary p-6 flex flex-col justify-between relative`}
+        ${position === 'left' ? 'lg:h-[480px] lg:w-[334px]' : ''} 
+        ${position === 'center' ? 'lg:h-[520px] lg:w-[484px]' : ''} 
+        ${position === 'right' ? 'lg:h-[440px] lg:w-[334px]' : ''} 
+        max-lg:aspect-4/3 border border-white-20 rounded-xl hover:border-primary p-6 flex flex-col justify-between relative`}
     >
       <Image
         src={image}

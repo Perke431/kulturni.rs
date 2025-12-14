@@ -20,8 +20,8 @@ const Event = ({ event }: { event: eventType }) => {
     <Link
       href={link}
       className={`
-        border border-white-20 rounded-xl hover:border-primary p-4 flex flex-col justify-between relative max-md:min-h-[480px] max-lg:min-h-[400px] ${
-          isListPage ? 'min-h-[480px]' : 'min-h-[360px]'
+        max-lg:aspect-3/4 border border-white-20 rounded-xl hover:border-primary p-4 flex flex-col justify-between relative ${
+          isListPage ? 'lg:min-h-[480px]' : 'lg:min-h-[360px]'
         }`}
     >
       <Image

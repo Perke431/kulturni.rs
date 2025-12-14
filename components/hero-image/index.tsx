@@ -8,7 +8,7 @@ const HeroImage = ({ inHero }: { inHero?: boolean }) => {
         width={284}
         height={320}
         fetchPriority="high"
-        className="border-background border-[5px] max-md:hidden rounded-xl absolute -left-20 xl:-left-40 top-20 -rotate-z-10 bg-cover max-lg:max-w-[200px] max-xl:max-w-60"
+        className="border-background border-[5px] max-w-[120px] xs:max-w-[160px] rounded-xl absolute left-0 bottom-4 md:top-20 md:-left-20 xl:-left-40 -rotate-z-10 bg-cover md:max-w-[200px] lg:max-w-60 xl:max-w-120"
         alt="Kulturni.rs hero slika mala"
       />
       <Image
@@ -19,14 +19,14 @@ const HeroImage = ({ inHero }: { inHero?: boolean }) => {
         alt="Kulturni.rs hero slika"
         className={`${
           inHero ? 'md:-mt-16' : ''
-        } mx-auto rounded-lg sm:rounded-2xl max-md:max-w-full max-lg:max-w-[560px] max-xl:max-w-[680px]`}
+        } mx-auto rounded-lg sm:rounded-2xl md:max-w-[560px] lg:max-w-[680px] xl:max-w-[784px]`}
       />
       <Image
         src="/images/kulturni_rs_hero_slika_mala_desno.jpg"
         width={284}
         height={320}
         fetchPriority="high"
-        className="border-background border-[5px] max-md:hidden rounded-xl absolute -right-20 xl:-right-40 top-[120px] rotate-z-10 bg-cover max-lg:max-w-[200px] max-xl:max-w-60"
+        className="border-background border-[5px] max-w-[120px] xs:max-w-[160px] rounded-xl absolute right-0 bottom-10 md:-right-20 md:top-[120px] xl:-right-40 rotate-z-10 bg-cover md:max-w-[200px] lg:max-w-60 xl:max-w-120"
         alt="Kulturni.rs hero slika mala"
       />
     </div>

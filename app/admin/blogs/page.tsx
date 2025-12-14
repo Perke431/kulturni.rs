@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { createSupabaseClient } from '@/lib/supabase/client';
 import type { Blog } from '@/lib/types/database.types';
 import Link from 'next/link';
+import WYSIWYGEditor from '@/components/wysiwyg-editor';
 
 export default function AdminBlogsPage() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -234,6 +235,8 @@ function BlogForm({
     read_time: blog?.read_time ?? 5,
     content: blog?.content ?? '',
     image_url: blog?.image_url ?? '',
+    image_name: (blog as any)?.image_name ?? '',
+    image_alt: (blog as any)?.image_alt ?? '',
     related_blogs: blog?.related_blogs ?? [],
   });
   const [loading, setLoading] = useState(false);
@@ -352,12 +355,47 @@ function BlogForm({
 
         <div>
           <label className="block text-sm font-medium mb-2 text-text">Image</label>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label className="block text-sm font-medium mb-2 text-text">
+                Custom Image Name <span className="text-red-400">*</span>
+              </label>
+              <input
+                type="text"
+                value={formData.image_name}
+                onChange={(e) => setFormData({ ...formData, image_name: e.target.value })}
+                placeholder="e.g., blog-featured-image"
+                required
+                className="w-full px-4 py-2 bg-background border border-white-20 rounded-md text-text focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-text/40"
+              />
+              <p className="mt-1 text-xs text-text/60">Enter a name for the image file before uploading</p>
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2 text-text">Image Alt Text</label>
+              <input
+                type="text"
+                value={formData.image_alt}
+                onChange={(e) => setFormData({ ...formData, image_alt: e.target.value })}
+                placeholder="e.g., Beautiful sunset over mountains"
+                className="w-full px-4 py-2 bg-background border border-white-20 rounded-md text-text focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-text/40"
+              />
+              <p className="mt-1 text-xs text-text/60">Optional: Descriptive text for accessibility</p>
+            </div>
+          </div>
+
           <input
             type="file"
             accept="image/*"
             onChange={async (e) => {
               const file = e.target.files?.[0];
               if (!file) return;
+
+              if (!formData.image_name || formData.image_name.trim() === '') {
+                setError('Please enter a custom image name before uploading');
+                e.target.value = ''; // Clear the file input
+                return;
+              }
 
               setUploading(true);
               setError('');
@@ -373,6 +411,7 @@ function BlogForm({
                 const uploadFormData = new FormData();
                 uploadFormData.append('file', file);
                 uploadFormData.append('folder', 'images');
+                uploadFormData.append('customName', formData.image_name.trim());
 
                 const response = await fetch('/api/upload', {
                   method: 'POST',
@@ -388,7 +427,10 @@ function BlogForm({
                   throw new Error(data.error || 'Failed to upload image');
                 }
 
-                setFormData({ ...formData, image_url: data.url });
+                setFormData({ 
+                  ...formData, 
+                  image_url: data.url
+                });
                 setPreviewImage(data.url);
               } catch (err: any) {
                 setError(err.message || 'Failed to upload image');
@@ -397,7 +439,7 @@ function BlogForm({
               }
             }}
             className="w-full px-4 py-2 bg-background border border-white-20 rounded-md text-text focus:outline-none focus:ring-2 focus:ring-primary file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-background hover:file:bg-primary/90"
-            disabled={uploading}
+            disabled={uploading || !formData.image_name || formData.image_name.trim() === ''}
           />
           {uploading && (
             <p className="mt-2 text-sm text-text/70">Uploading image...</p>
@@ -406,7 +448,7 @@ function BlogForm({
             <div className="mt-4">
               <img
                 src={previewImage}
-                alt="Preview"
+                alt={formData.image_alt || 'Preview'}
                 className="max-w-xs max-h-48 object-cover rounded border border-white-20"
                 onError={(e) => {
                   (e.target as HTMLImageElement).style.display = 'none';
@@ -415,7 +457,7 @@ function BlogForm({
               <button
                 type="button"
                 onClick={() => {
-                  setFormData({ ...formData, image_url: '' });
+                  setFormData({ ...formData, image_url: '', image_name: '', image_alt: '' });
                   setPreviewImage(null);
                 }}
                 className="mt-2 text-sm text-red-300 hover:text-red-200"
@@ -428,13 +470,10 @@ function BlogForm({
 
         <div>
           <label className="block text-sm font-medium mb-2 text-text">Content (HTML)</label>
-          <textarea
-            value={formData.content ?? ''}
-            onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-            required
-            rows={10}
-            className="w-full px-4 py-2 bg-background border border-white-20 rounded-md text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-            placeholder="Enter HTML content here..."
+          <WYSIWYGEditor
+            content={formData.content ?? ''}
+            onChange={(html) => setFormData({ ...formData, content: html })}
+            placeholder="Enter content here..."
           />
         </div>
 

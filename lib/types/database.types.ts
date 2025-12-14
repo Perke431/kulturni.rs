@@ -16,6 +16,8 @@ export interface Database {
           date: string
           description: string
           id: string
+          image_alt: string | null
+          image_name: string | null
           image_url: string | null
           read_time: number
           related_blogs: string[] | null
@@ -28,6 +30,8 @@ export interface Database {
           date: string
           description: string
           id?: string
+          image_alt?: string | null
+          image_name?: string | null
           image_url?: string | null
           read_time: number
           related_blogs?: string[] | null
@@ -40,6 +44,8 @@ export interface Database {
           date?: string
           description?: string
           id?: string
+          image_alt?: string | null
+          image_name?: string | null
           image_url?: string | null
           read_time?: number
           related_blogs?: string[] | null

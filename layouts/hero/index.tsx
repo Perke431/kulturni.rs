@@ -6,7 +6,7 @@ const Hero = () => {
     <Section className="py-20 lg:py-24 text-center">
       <div className="container">
         <h1 className="relative z-10 max-md:mb-6">
-          Kultura <span className="text-primary">živi</span> <br />u svakom
+          Kultura <span className="text-primary">živi</span> <br className='max-xs:hidden' />u svakom
           uglu.
         </h1>
         <HeroImage inHero />

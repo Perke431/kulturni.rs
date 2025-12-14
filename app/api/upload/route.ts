@@ -64,9 +64,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Generate unique filename
+    // Get custom name (required)
+    const customName = formData.get('customName') as string | null;
     const fileExt = file.name.split('.').pop();
-    const fileName = `${Date.now()}-${Math.random().toString(36).substring(2, 15)}.${fileExt}`;
+    
+    if (!customName || !customName.trim()) {
+      return NextResponse.json(
+        { error: 'Custom image name is required' },
+        { status: 400 }
+      );
+    }
+    
+    // Sanitize custom name and create filename
+    const sanitizedName = customName.trim().replace(/[^a-zA-Z0-9-_]/g, '-');
+    const fileName = `${sanitizedName}.${fileExt}`;
     
     // Save to public folder
     const publicPath = join(process.cwd(), 'public', folder);

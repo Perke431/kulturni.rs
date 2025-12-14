@@ -10,3 +10,4 @@ export { default as Event } from './event';
 export { default as DetailHero } from './detail-hero';
 export { default as Hamburger } from './hamburger';
 export { default as AdminDashboard } from './admin/dashboard';
+export { default as WYSIWYGEditor } from './wysiwyg-editor';

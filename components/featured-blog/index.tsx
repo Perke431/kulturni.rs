@@ -18,7 +18,7 @@ const FeaturedEvent = ({ blog }: { blog: featuredBlogType }) => {
     <Link
       href={link}
       className={`
-        min-h-[490px] border border-white-20 rounded-xl hover:border-primary p-6 flex flex-col justify-end relative`}
+        max-lg:aspect-3/4 lg:min-h-[490px] border border-white-20 rounded-xl hover:border-primary p-6 flex flex-col justify-end relative`}
     >
       <Image
         src={image}
@@ -27,9 +27,11 @@ const FeaturedEvent = ({ blog }: { blog: featuredBlogType }) => {
         className="-z-10 object-cover"
       />
       <div className="flex flex-col justify-end gap-3 text-left">
+        {tag && (
         <p className="bg-primary px-3 py-1 text-background rounded-sm absolute top-6 left-6">
           {tag}
         </p>
+        )}
         <h3 className="mt-auto">{headline}</h3>
         <div className="flex items-center justify-between">
           <p className="text-white">{date}</p>
